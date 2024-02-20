@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Editor SVG</h1>
+    <button id="dreptunghi">Dreptunghi</button>
+    <button id="elipsa">Elipsa</button>
+    <button id="romb">Romb</button>
+    <button id="linie">Linie</button>
+    <button id="exportBtn">Export PNG</button>
+    <button id="exportSvgBtn">Export SVG</button>
+
+    <label for="line-color">Line Color:</label>
+    
+    <input type="color" id="line-color" value="#000000" onchange="updateLineColor()">
+    
+    <label for="background-color">Background Color:</label>
+    <input type="color" id="background-color" value="#FFFFFF" onchange="updateBackgroundColor()">
+    <label for="line-width">Line Width:</label>
+    <input type="number" id="line-width" min="1" value="1" onchange="updateLineWidth()">
+
+    <svg id="editor">
+        <svg id="elemente"></svg>
+        <rect id="selectieDreptunghi" width="0" height="0" style="display:none;"></rect>
+        <ellipse id="selectieElipsa" cx="0" cy="0" rx="0" ry="0" style="display:none"></ellipse>
+        <polygon id="selectieRomb" points="0,0 0,0 0,0 0,0" style="display:none"></polygon>
+        <line id="selectieLinie" x1="0" y1="0" x2="0" y2="0" style="display:none"></line>
+    </svg>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
